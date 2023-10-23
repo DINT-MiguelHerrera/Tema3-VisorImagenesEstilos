@@ -11,25 +11,87 @@
             <Setter Property="Source" Value="/episodioIV.jpg"></Setter>
             <Setter Property="Width" Value="135"></Setter>
         </Style>
+        <Style TargetType="DockPanel" x:Key="DockPanel1">
+            <Setter Property="Background" Value="LightBlue"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Bottom"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TextBlockNumImagenes">
+            <Setter Property="Text" Value="Nº de imágenes: 8"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Left"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TextBlockNombreAutor">
+            <Setter Property="Text" Value="Diseñado por Miguel Herrera"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Right"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+        </Style>
+        <Style TargetType="Border" x:Key="BordeRecuadroBotones">
+            <Setter Property="DockPanel.Dock" Value="Right"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+            <Setter Property="BorderThickness" Value="3"></Setter>
+            <Setter Property="CornerRadius" Value="3"></Setter>
+            <Setter Property="Background" Value="LightGreen"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="BotonAñadirImagen">
+            <Setter Property="Content" Value="Añadir imagen"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Top"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="BotonEliminarImagen">
+            <Setter Property="Content" Value="Eliminar imagen"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Top"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="BotonEliminarTodas">
+            <Setter Property="Content" Value="Eliminar todas"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Top"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="BotonRecortar">
+            <Setter Property="Content" Value="Recortar"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Bottom"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="BotonRotar">
+            <Setter Property="Content" Value="Rotar"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Bottom"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TextBlockSeparacionBotones">
+            <Setter Property="Margin" Value="10"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TextBlockTitulo">
+            <Setter Property="Text" Value="Visor de imágenes"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Top"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="40"></Setter>
+        </Style>
+        
     </Window.Resources>
     <DockPanel LastChildFill="True">
-        <DockPanel Background="LightBlue" DockPanel.Dock="Bottom" Margin="10">
-            <TextBlock Text="Nº de imágenes: 8" FontSize="20" DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="10"></TextBlock>
-            <TextBlock Text="Diseñado por Miguel Herrera" FontSize="20" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="10"></TextBlock>
+        <DockPanel Style="{StaticResource DockPanel1}">
+            <TextBlock Style="{StaticResource TextBlockNumImagenes}"></TextBlock>
+            <TextBlock Style="{StaticResource TextBlockNombreAutor}"></TextBlock>
         </DockPanel>
-        <Border DockPanel.Dock="Right" BorderBrush="Black" BorderThickness="3" CornerRadius="3" Background="LightGreen" Margin="10">
+        <Border Style="{StaticResource BordeRecuadroBotones}">
             <DockPanel LastChildFill="True">
-                <Button Content="Añadir imagen" DockPanel.Dock="Top" Margin="5"></Button>
-                <Button Content="Eliminar imagen" DockPanel.Dock="Top" Margin="5"></Button>
-                <Button Content="Eliminar todas" DockPanel.Dock="Top" Margin="5"></Button>
-                <Button Content="Rotar" DockPanel.Dock="Bottom" Margin="5"></Button>
-                <Button Content="Recortar" DockPanel.Dock="Bottom" Margin="5"></Button>
-                <TextBlock Margin="10"></TextBlock>
+                <Button Style="{StaticResource BotonAñadirImagen}"></Button>
+                <Button Style="{StaticResource BotonEliminarImagen}"></Button>
+                <Button Style="{StaticResource BotonEliminarTodas}"></Button>
+                <Button Style="{StaticResource BotonRotar}"></Button>
+                <Button Style="{StaticResource BotonRecortar}"></Button>
+                <TextBlock Style="{StaticResource TextBlockSeparacionBotones}"></TextBlock>
             </DockPanel>
         </Border>
 
         <DockPanel DockPanel.Dock="Left">
-            <TextBlock Text="Visor de imágenes" DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="40"/>
+            <TextBlock Style="{StaticResource TextBlockTitulo}"/>
             <WrapPanel>
                 <Image Style="{StaticResource Imagen}"/>
                 <Image Style="{StaticResource Imagen}"/>
